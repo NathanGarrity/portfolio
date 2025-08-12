@@ -97,6 +97,7 @@ function Projects() {
   return (
     <section className="flex-grow space-y-4 px-8 py-16 font-body w-full max-w-7xl mx-auto">
       <h2 className="text-5xl font-bold text-center">Projects</h2><br></br>
+      <p>Work in progress... adding projects completed over school years to this page, along with GitHub</p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="border rounded-xl p-6 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-gray-800">
           <img
