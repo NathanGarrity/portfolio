@@ -1,20 +1,18 @@
-// dev_portfolio_site - A creative React portfolio template with TailwindCSS + Routing + Fonts + Active Nav Icons
-
 import { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
-import { Sun, Moon, Home, FolderKanban, User, Mail } from "lucide-react";
+import { Home, FolderKanban, User, Mail } from "lucide-react";
 import { useSwipeable } from "react-swipeable";
 import { motion, AnimatePresence } from "framer-motion";
-import portrait from "./assets/portrait.png"; // adjust the path as needed
-import "./App.css"; // for custom fonts
+import portrait from "./assets/portrait.png";
+import "./App.css"; 
 import resume from "./assets/resume.pdf";
+import { HashRouter as Router, Routes, Route, NavLink } from "react-router-dom"; 
 
 function Header() {
   return (
     
     <header className="w-full p-4 flex flex-wrap justify-between items-center border-b border-gray-300 dark:border-gray-700 font-title gap-y-2">
       <h1 className="text-2xl font-bold mr-4 font-mono">
-      ~/<span className="inline-block overflow-hidden border-r-2 border-white animate-typewriter">nathan-portfolio</span>
+      <span className="inline-block overflow-hidden">&gt;</span><span className="inline-block overflow-hidden border-r-2 border-white animate-typewriter">nathan-portfolio</span>
       </h1>
       <nav className="flex flex-wrap gap-2 items-center">
         <NavLink
@@ -80,28 +78,31 @@ function Home1() {
       <br></br><br></br><br></br>
       <div className="w-full mt-12 flex flex-col gap-8 text-4xl font-bold">
         <div className="relative overflow-hidden h-16">
-          <p className="absolute whitespace-nowrap animate-left-slide-1 left-20">Creative Developer.</p>
+          <p className="absolute whitespace-nowrap animate-left-slide-1 left-20">Full-Stack Developer.</p>
         </div>
         <div className="relative overflow-hidden h-16 text-right">
           <p className="absolute whitespace-nowrap animate-right-slide right-20">Problem Solver.</p>
         </div>
         <div className="relative overflow-hidden h-16">
-          <p className="absolute whitespace-nowrap animate-left-slide-2 left-20">Tech Explorer.</p>
+          <p className="absolute whitespace-nowrap animate-left-slide-2 left-20">Collaborator.</p>
         </div>
       </div>
     </section>
   );
 }
 
+import EzShiftzLogin from './assets/EzShiftzLogin.png';
+import DiabeticRetinopathyDiagnosis from './assets/DiabeticRetinopathyDiagnosis.png';
+
 function Projects() {
   return (
     <section className="flex-grow space-y-4 px-8 py-16 font-body w-full max-w-7xl mx-auto">
       <h2 className="text-5xl font-bold text-center">Projects</h2><br></br>
-      <p>Work in progress... adding projects completed over school years to this page, along with GitHub</p>
+      <p>Work in progress... adding projects completed over school years to this page, along with GitHub links</p><br></br><br></br>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="border rounded-xl p-6 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-gray-800">
           <img
-            src="/src/assets/EzShiftzLogin.png" 
+            src={EzShiftzLogin}
             alt="Project 1 Screenshot"
             className="rounded-lg w-full h-100 object-cover mb-4"
           />
@@ -111,7 +112,7 @@ function Projects() {
         </div>
         <div className="border rounded-xl p-6 shadow-lg hover:scale-105 transition-transform bg-white dark:bg-gray-800">
           <img
-            src="/src/assets/DiabeticRetinopathyDiagnosis.png"
+            src={DiabeticRetinopathyDiagnosis}
             alt="Project 2 Screenshot"
             className="rounded-lg w-full h-100 object-cover mb-4"
           />
@@ -151,7 +152,12 @@ import hiking4 from './assets/hiking4.jpg';
 import snowboarding from './assets/snowboarding.jpg';
 import snowboarding2 from './assets/snowboarding2.jpg';
 import snowboarding3 from './assets/snowboarding3.jpg';
-import figure from './assets/3.jpg';
+import golf from './assets/golf.png';
+import golf2 from './assets/golf2.png';
+import hockey from './assets/hockey.png';
+import hockey2 from './assets/hockey2.png';
+import hockey3 from './assets/hockey3.png';
+import hockey4 from './assets/hockey4.png';
 
 const adventures = [
   {
@@ -167,9 +173,9 @@ const adventures = [
     imgLeft: false,
   },
   {
-    images: [figure],
-    title: "Algonquin Adventure",
-    desc: "Wilderness camping, sunrise canoeing, and the kind of quiet you only get far from cell service.",
+    images: [golf, golf2, hockey, hockey2, hockey3, hockey4],
+    title: "Golf & Hockey",
+    desc: "I love playing and watching golf, and also hockey when it gets cooler out. It's a perfect way to socialize and is engaging feeling the ups and downs of a round/game.",
     imgLeft: true,
   },
 ];
@@ -210,7 +216,6 @@ function AdventureCard({ images, title, desc, imgLeft }) {
 
   return (
     <div className={`flex flex-col md:flex-row items-center md:justify-between gap-8 ${imgLeft ? "" : "md:flex-row-reverse"}`}>
-      {/* Animated Carousel */}
       <div
         {...swipeHandlers}
         className="relative w-full md:w-2/5 h-134 flex justify-center items-center select-none overflow-hidden"
@@ -280,7 +285,7 @@ function AdventureCard({ images, title, desc, imgLeft }) {
 function About() {
   
   const [activeTab, setActiveTab] = useState("professional");
-  // Array to track current image index per adventure
+  // Array used track the current image index per "activity"
   return (
     <section className="flex-grow px-8 py-16 font-body w-full max-w-7xl mx-auto">
       <h2 className="text-5xl font-bold text-center mb-8">About Me</h2>

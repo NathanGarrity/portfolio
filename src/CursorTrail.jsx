@@ -14,7 +14,6 @@ export default function CursorTrail() {
       document.body.appendChild(dot);
       trailRef.current.push(dot);
 
-      // Remove after fade out
       setTimeout(() => {
         dot.style.opacity = "0";
         setTimeout(() => {
